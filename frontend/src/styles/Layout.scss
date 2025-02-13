@@ -1,0 +1,30 @@
+@import 'variables';
+
+.container-centered {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: white;
+  min-height: 100vh;
+  padding: 0 16px;
+
+  @include respond-below(md) {
+    padding: 0 8px;
+  }
+}
+  
+main {
+  flex: 1;
+  padding: 20px 0;
+}
+
+.layout-container {
+  width: 100%;
+  overflow-x: hidden; // Prevent horizontal scroll
+  
+  @include respond-below(md) {
+    .container {
+      padding: 0 8px;
+    }
+  }
+}

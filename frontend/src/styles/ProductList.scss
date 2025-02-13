@@ -1,0 +1,88 @@
+@import './variables';
+/* Posunutí celého carouselu (pokud je potřeba) */
+.product-carousel {
+    margin-left: 0;
+    margin-bottom: 2rem !important; // Upravit nebo odstranit podle potřeby
+    
+    /* Upravíme šipky, aby byly mimo oblast karet, ale zároveň aby jejich okolí nebylo klikatelné */
+    .carousel-control-prev,
+    .carousel-control-next {
+      /* Zablokujeme klikatelnost celého ovládacího prvku */
+      pointer-events: none;
+      width: 5%; // Zmenšit šířku ovládacích prvků
+    }
+  
+    .carousel-control-prev {
+      left: -50px; // Posunout šipku doleva
+    }
+  
+    .carousel-control-next {
+      right: -50px; // Posunout šipku doprava
+    }
+    
+    /* Samotné ikony šipek necháme klikatelné */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      pointer-events: auto;
+      filter: invert(1) grayscale(100%) brightness(30%); // Změna barvy na tmavou
+      
+      &:hover {
+        filter: invert(1) grayscale(100%) brightness(0%); // Tmavší při hoveru
+      }
+    }
+    
+    /* Posunutí indikátorů (kuliček) dole */
+    .carousel-indicators {
+      bottom: -30px; /* uprav dle potřeby */
+    }
+  }
+    
+  /* Kontejner, který zajišťuje řazení produktových karet vedle sebe bez mezer */
+  .product-group {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+  }
+    
+  /* Každá produktová karta zabere přesně 19.89 % šířky (aby se jich vešlo 5) */
+  .product-item {
+    flex: 0 0 auto;
+    width: 19.89%;
+    padding: 0;
+    margin: 0;
+    
+    @include respond-below(md) {
+      width: 50%; // na tabletech 2 produkty na řádek
+    }
+    
+    @include respond-below(sm) {
+      width: 100%; // na telefonech 1 produkt na řádek
+    }
+  }
+    
+  /* Styly pro produktové karty uvnitř carouselu */
+  /* Výchozí stav: žádné ohraničení */
+  .product-carousel .product-card {
+    border: none;
+    background-color: transparent;
+    transition: border 0.3s, box-shadow 0.3s, background-color 0.3s;
+  }
+    
+  /* Efekt hoveru: pokud najedeš na celý kontejner (.product-item), aplikuje se hover efekt na produktovou kartu */
+  .product-carousel .product-item:hover .product-card {
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+  }
+  
+  /* Odstranit nebo zmenšit margin na product-card */
+  .product-card {
+    margin-bottom: 0 !important; // Přepíše Bootstrap margin
+  }
+  
+  /* Upravit mezery mezi sekcemi */
+  .section {
+    margin-bottom: 1rem; // Zmenšit mezeru mezi sekcemi
+  }
+  

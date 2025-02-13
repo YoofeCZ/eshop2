@@ -1,0 +1,54 @@
+.slider-item {
+    position: relative;  // Důležité pro absolutní pozicování caption
+    width: 100%;             // Kontejner zabere 100 % šířky rodiče
+    max-width: 1200px;       // Nepřesáhne 1200px
+    aspect-ratio: 1200 / 500; // Zachová poměr stran 1200:500
+    margin: 0 auto;          // Centrovat
+    overflow: hidden;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.slider-image {
+    width: 100%;             // Kontejner zabere 100 % šířky rodiče
+    max-width: 1200px;       // Nepřesáhne 1200px
+    aspect-ratio: 1200 / 500; // Zachová poměr stran 1200:500   // Obrázek se zmenší tak, aby byl celý viditelný
+    display: block;
+}
+
+.slider-content {
+    position: relative;
+    bottom: 100px;  // Posune text nahoru
+    text-align: center;
+    color: #000;
+    z-index: 2;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 30px;  // Posune text nahoru
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.carousel {
+  // Stylování teček/indikátorů
+  .carousel-indicators {
+    button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #fff; // barva neaktivní tečky
+      border: 1px solid #000;
+      margin: 0 5px;
+
+      &.active {
+        background-color: #000; // barva aktivní tečky
+      }
+    }
+  }
+}

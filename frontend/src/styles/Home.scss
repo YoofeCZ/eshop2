@@ -1,0 +1,43 @@
+@import 'variables';
+
+$container-max-width: 1400px;
+$container-padding: 16px;
+
+.container-centered {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  background-color: white;
+
+  @include respond-below(sm) {
+    padding: 0 16px;
+  }
+}
+
+// Pro header a home container
+.header,
+.home-container,
+footer {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.section {
+  padding: 0 24px;  // Padding pouze pro textový obsah
+  
+  h2 {
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  @include respond-below(sm) {
+    padding: 0 16px;
+  }
+}

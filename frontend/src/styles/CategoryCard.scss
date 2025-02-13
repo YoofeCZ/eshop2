@@ -1,0 +1,47 @@
+@import 'variables';
+/* Kontejner pro kategorie – nastavujeme CSS Grid */
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Vytvoří 4 sloupce stejné šířky */
+  gap: 1rem; /* Definuje mezeru mezi kartami */
+  
+  @include respond-below(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include respond-below(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Stylování jednotlivých kategorií */
+.category-box {
+  border: none;
+  background-color: transparent;
+  transition: box-shadow 0.3s, background-color 0.3s;
+  padding: 0.5rem;
+  text-decoration: none;       /* důležité */
+  color: #000;
+  font-weight: bold;           /* důležité */
+  
+  &:hover {
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    text-decoration: none;     /* znovu pro hover */
+    color: #000;
+  }
+  
+  .category-img-top {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    background-size: 100% 100%; /* případně můžeš použít cover */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .category-body {
+    padding: 0.5rem;
+    text-align: center;
+  }
+}

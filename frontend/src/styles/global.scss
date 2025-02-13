@@ -1,0 +1,62 @@
+@use "sass:math";
+@use "sass:color";
+@forward "bootstrap/scss/bootstrap" with (
+  $enable-deprecation-messages: false
+);
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+$breakpoints: (
+  'xs': 0,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+@mixin respond-below($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (max-width: calc(map-get($breakpoints, $size) - 0.02px)) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-above($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0 16px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #c8c8c9;
+  font-size: 16px;
+  line-height: 1.5;
+  
+  @include respond-below(sm) {
+    font-size: 14px;
+  }
+}
+
+.container-centered {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}

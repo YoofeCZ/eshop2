@@ -1,0 +1,35 @@
+@import 'variables';
+
+.product-card {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  border: none;
+  background-color: transparent;
+  transition: box-shadow 0.3s, background-color 0.3s;
+  margin: 0 0.5rem 1rem;
+  padding: 0.5rem;
+
+  &:hover {
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+  }
+
+  .card-img-top {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .card-body {
+    padding: 0.5rem;
+  }
+  
+  @include respond-below(sm) {
+    margin: 0 0.25rem 0.5rem;
+    padding: 0.25rem;
+  }
+}

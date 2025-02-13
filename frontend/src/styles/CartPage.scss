@@ -1,0 +1,33 @@
+@import 'variables';
+
+$container-max-width: 1400px;
+$container-padding: 16px;
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  background-color: white;
+  min-height: calc(100vh - 200px);
+  margin-top: 0;
+  margin-bottom: 0;
+
+  h2 {
+    padding: 1rem 0;
+  }
+
+  @include respond-below(sm) {
+    padding: 0 8px;
+  }
+}
+
+.btn-success {
+  background-color: #09122C !important;
+  border-color: #09122C !important;
+  
+  &:hover {
+    background-color: lighten(#09122C, 10%) !important;
+    border-color: lighten(#09122C, 10%) !important;
+  }
+}
